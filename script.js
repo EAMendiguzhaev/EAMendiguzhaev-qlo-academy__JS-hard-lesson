@@ -1,54 +1,33 @@
 "use strict";
 
-// Пункт №1 домашнего задания
+//1
 
-let lang = "ru";
-let array = [];
+let arr = ["2", "4", "6", "12", "14", "22", "44"];
 
-if (lang === "ru") {
-  array = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
-} else if (lang === "en") {
-  array = ["mn", "ts", "wd", "th", "fr", "st", "sn"];
-}
+arr.forEach((item) => {
+  if (item.startsWith("2") || item.startsWith("4")) {
+    console.log(item);
+  }
+});
 
-console.log("array: ", array);
+//2
 
-switch (lang) {
-  case "ru":
-    array = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
-    break;
-  default:
-    alert("Нет таких значений");
-}
+const primeNumber = function (n) {
+  for (let i = 2; i * i <= n; i === 2 ? i++ : (i += 2)) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
 
-switch (lang) {
-  case "en":
-    array = ["mn", "ts", "wd", "th", "fr", "st", "sn"];
-    break;
-  default:
-    alert("There are no such values");
-}
-
-console.log("array: ", array);
-
-let object = {
-  ru: ["пн", "вт", "ср", "чт", "пт", "сб", "вс"],
-  en: ["mn", "ts", "wd", "th", "fr", "st", "sn"],
+  return n > 1;
 };
 
-array = object[lang];
+const res = [...Array(100)]
+  .reduce(
+    (a, _, i) =>
+      a.concat(primeNumber(i) ? `Делители числа ${i}: 1 и ${i}` : []),
+    []
+  )
+  .join("\n");
 
-console.log(array);
-
-// Пункт №2 домашнего задания
-
-let message = prompt("Введите имя Артём или Максим");
-
-let namePerson =
-  message === "Артём"
-    ? alert("Директор")
-    : message === "Максим"
-    ? alert("Преподаватель")
-    : message === ""
-    ? alert("Студент")
-    : alert("Студент");
+console.log(res);
