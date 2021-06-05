@@ -1,33 +1,56 @@
 "use strict";
 
-//1
+//Создаю массив week и записвыю в него дни недели в виде строк
 
-let arr = ["2", "4", "6", "12", "14", "22", "44"];
+const week = [
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+  "Воскресенье",
+];
 
-arr.forEach((item) => {
-  if (item.startsWith("2") || item.startsWith("4")) {
-    console.log(item);
-  }
-});
+const day = document.querySelector(".week");
+const todayDay = new Date("June 05, 2021 21:21:21");
 
-//2
+const days = () => {
+  week.forEach((item, i) => {
+    let newdiv = document.createElement("div");
 
-const primeNumber = function (n) {
-  for (let i = 2; i * i <= n; i === 2 ? i++ : (i += 2)) {
-    if (n % i === 0) {
-      return false;
+    if (i === +todayDay.getDay() - 1) {
+      console.log(todayDay.getDay());
+      newdiv.classList.add("bold");
+      newdiv.textContent = week[i];
     }
-  }
 
-  return n > 1;
+    if (item === "Суббота" || item === "Воскресенье") {
+      newdiv.classList.add("italic"); // Делаем дополнительно курсивом (Даже если уже жирным выделено)
+      newdiv.textContent = week[i];
+    } else {
+      newdiv.textContent = week[i]; // Если не текущий день и не выходные, то просто вставляем текст без стилей
+    }
+
+    day.appendChild(newdiv);
+  });
 };
 
-const res = [...Array(100)]
-  .reduce(
-    (a, _, i) =>
-      a.concat(primeNumber(i) ? `Делители числа ${i}: 1 и ${i}` : []),
-    []
-  )
-  .join("\n");
+days();
 
-console.log(res);
+// Этот читерный вариант в интернете нашел =)
+
+// let days = [
+//   "Понедельник",
+//   "Вторник",
+//   "Среда",
+//   "Четверг",
+//   "Пятница",
+//   "<i>Суббота</i>",
+//   "<i>Воскресенье</i>",
+// ];
+
+// let todayIndex = (6 + new Date().getDay()) % 7;
+// days[todayIndex] = `<b>${days[todayIndex]}</b>`;
+
+// document.body.insertAdjacentHTML("beforeEnd", days.join("<br>"));
