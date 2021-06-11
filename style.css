@@ -1,14 +1,40 @@
-.week {
+body {
+  min-width: 1200px;
+  margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  background-color: #f07b86;
 }
 
-.bold {
-  font-weight: 700;
+.wrapper {
+  width: 900px;
+  margin: 40px auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.italic {
-  font-style: italic;
+.color {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.change {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 160px;
+  min-height: 50px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
 }
