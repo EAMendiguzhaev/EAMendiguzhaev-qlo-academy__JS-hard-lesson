@@ -1,14 +1,6 @@
-.week {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.italic {
-  font-style: italic;
+.text {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  font-size: 20px;
 }
