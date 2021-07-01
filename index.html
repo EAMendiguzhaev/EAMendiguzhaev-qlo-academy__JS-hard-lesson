@@ -3,17 +3,40 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS 19.0 - hard</title>
+  <title>lesson29_hard</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <div class="full-date"></div>
-  <div class="shortened-date"></div>
-  <!-- <div class="time"></div> -->
+  <div>
+    <label for="usd">Доллар США (USD)
+      <input type="text" name='USD' id="usd">
+      <input type="checkbox" name='valute' class='input-usd' id='usd'>
+    </label>
+
+    <div class="valute">
+      <p>RUB: <span class="rub"></span></p>
+      <button type='button' class="button-usd">Конвертировать</button>
+    </div>
+  </div>
+
+  <div>
+    <label for="rub">Российский рубль (RUB)
+      <input type="text" name='RUB' id='rub'>
+      <input type="checkbox" name='valute' class='input-rub' id='rub'>
+    </label>
+
+    <div class="valute">
+      <p>USD: <span class="usd"></span></p>
+      <button type='button' class="button-rub">Конвертировать</button>
+    </div>
+  </div>
+
+  <button type='button' class="clear">Очистить</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
